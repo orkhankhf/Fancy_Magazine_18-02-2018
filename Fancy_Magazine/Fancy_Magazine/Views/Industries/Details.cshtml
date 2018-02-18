@@ -1,0 +1,51 @@
+﻿@model Fancy_Magazine.Models.Industry
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Industry</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.industries_title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.industries_title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.industries_content)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.industries_content)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.industries_img)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.industries_img)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.industries_url)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.industries_url)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.industries_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

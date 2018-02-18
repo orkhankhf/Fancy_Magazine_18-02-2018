@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Fancy_Magazine.Models.Contact>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.contact_phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.contact_email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.contact_address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.contact_work_time)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.contact_phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.contact_email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.contact_address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.contact_work_time)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.contact_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.contact_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.contact_id })
+        </td>
+    </tr>
+}
+
+</table>

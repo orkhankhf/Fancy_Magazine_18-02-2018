@@ -1,0 +1,43 @@
+﻿@model Fancy_Magazine.Models.Project_Area
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Project_Area</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.project_area_title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.project_area_title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.project_area_content)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.project_area_content)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.project_area_url)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.project_area_url)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.project_area_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

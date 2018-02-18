@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Fancy_Magazine.Models.Service_Area_Contents>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.service_contents_title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.service_contents_content)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.service_contents_icon)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.service_contents_title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.service_contents_content)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.service_contents_icon)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.service_contents_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.service_contents_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.service_contents_id })
+        </td>
+    </tr>
+}
+
+</table>

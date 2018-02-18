@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Fancy_Magazine.Models.Testimonials_Slider>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.testimonials_slider_icon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.testimonials_slider_content)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.testimonials_slider_author)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.testimonials_slider_position)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.testimonials_slider_img)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.testimonials_slider_icon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.testimonials_slider_content)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.testimonials_slider_author)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.testimonials_slider_position)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.testimonials_slider_img)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.testimonials_slider_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.testimonials_slider_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.testimonials_slider_id })
+        </td>
+    </tr>
+}
+
+</table>

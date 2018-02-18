@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FancyMagazineModelStoreContainer" CdmEntityContainer="FancyMagazineEntities">
+    <EntitySetMapping Name="Blogs">
+      <EntityTypeMapping TypeName="FancyMagazineModel.Blog">
+        <MappingFragment StoreEntitySet="Blog">
+          <ScalarProperty Name="blog_category_id" ColumnName="blog_category_id" />
+          <ScalarProperty Name="blog_img" ColumnName="blog_img" />
+          <ScalarProperty Name="blog_content" ColumnName="blog_content" />
+          <ScalarProperty Name="blog_title" ColumnName="blog_title" />
+          <ScalarProperty Name="blog_id" ColumnName="blog_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="FancyMagazineModel.Category">
+        <MappingFragment StoreEntitySet="Categories">
+          <ScalarProperty Name="category_name" ColumnName="category_name" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contacts">
+      <EntityTypeMapping TypeName="FancyMagazineModel.Contact">
+        <MappingFragment StoreEntitySet="Contact">
+          <ScalarProperty Name="contact_work_time" ColumnName="contact_work_time" />
+          <ScalarProperty Name="contact_address" ColumnName="contact_address" />
+          <ScalarProperty Name="contact_email" ColumnName="contact_email" />
+          <ScalarProperty Name="contact_phone" ColumnName="contact_phone" />
+          <ScalarProperty Name="contact_id" ColumnName="contact_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Feature_Boxes">
+      <EntityTypeMapping TypeName="FancyMagazineModel.Feature_Boxes">
+        <MappingFragment StoreEntitySet="Feature_Boxes">
+          <ScalarProperty Name="feature_boxes_url" ColumnName="feature_boxes_url" />
+          <ScalarProperty Name="feature_boxes_content" ColumnName="feature_boxes_content" />
+          <ScalarProperty Name="feature_boxes_icon" ColumnName="feature_boxes_icon" />
+          <ScalarProperty Name="feature_boxes_title" ColumnName="feature_boxes_title" />
+          <ScalarProperty Name="feature_boxes_id" ColumnName="feature_boxes_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Industries">
+      <EntityTypeMapping TypeName="FancyMagazineModel.Industry">
+        <MappingFragment StoreEntitySet="Industries">
+          <ScalarProperty Name="industries_url" ColumnName="industries_url" />
+          <ScalarProperty Name="industries_img" ColumnName="industries_img" />
+          <ScalarProperty Name="industries_content" ColumnName="industries_content" />
+          <ScalarProperty Name="industries_title" ColumnName="industries_title" />
+          <ScalarProperty Name="industries_id" ColumnName="industries_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menus">
+      <EntityTypeMapping TypeName="FancyMagazineModel.Menu">
+        <MappingFragment StoreEntitySet="Menu">
+          <ScalarProperty Name="menu_url" ColumnName="menu_url" />
+          <ScalarProperty Name="menu_text" ColumnName="menu_text" />
+          <ScalarProperty Name="menu_id" ColumnName="menu_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Messages">
+      <EntityTypeMapping TypeName="FancyMagazineModel.Message">
+        <MappingFragment StoreEntitySet="Messages">
+          <ScalarProperty Name="message_content" ColumnName="message_content" />
+          <ScalarProperty Name="message_website_url" ColumnName="message_website_url" />
+          <ScalarProperty Name="message_email" ColumnName="message_email" />
+          <ScalarProperty Name="message_name" ColumnName="message_name" />
+          <ScalarProperty Name="message_id" ColumnName="message_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Service_Area">
+      <EntityTypeMapping TypeName="FancyMagazineModel.Service_Area">
+        <MappingFragment StoreEntitySet="Service_Area">
+          <ScalarProperty Name="service_content_url" ColumnName="service_content_url" />
+          <ScalarProperty Name="service_content" ColumnName="service_content" />
+          <ScalarProperty Name="service_title" ColumnName="service_title" />
+          <ScalarProperty Name="service_img" ColumnName="service_img" />
+          <ScalarProperty Name="service_id" ColumnName="service_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Service_Area_Contents">
+      <EntityTypeMapping TypeName="FancyMagazineModel.Service_Area_Contents">
+        <MappingFragment StoreEntitySet="Service_Area_Contents">
+          <ScalarProperty Name="service_contents_icon" ColumnName="service_contents_icon" />
+          <ScalarProperty Name="service_contents_content" ColumnName="service_contents_content" />
+          <ScalarProperty Name="service_contents_title" ColumnName="service_contents_title" />
+          <ScalarProperty Name="service_contents_id" ColumnName="service_contents_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sliders">
+      <EntityTypeMapping TypeName="FancyMagazineModel.Slider">
+        <MappingFragment StoreEntitySet="Slider">
+          <ScalarProperty Name="slider_second_url" ColumnName="slider_second_url" />
+          <ScalarProperty Name="slider_first_url" ColumnName="slider_first_url" />
+          <ScalarProperty Name="slider_img" ColumnName="slider_img" />
+          <ScalarProperty Name="slider_title" ColumnName="slider_title" />
+          <ScalarProperty Name="slider_id" ColumnName="slider_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Testimonials_Slider">
+      <EntityTypeMapping TypeName="FancyMagazineModel.Testimonials_Slider">
+        <MappingFragment StoreEntitySet="Testimonials_Slider">
+          <ScalarProperty Name="testimonials_slider_img" ColumnName="testimonials_slider_img" />
+          <ScalarProperty Name="testimonials_slider_position" ColumnName="testimonials_slider_position" />
+          <ScalarProperty Name="testimonials_slider_author" ColumnName="testimonials_slider_author" />
+          <ScalarProperty Name="testimonials_slider_content" ColumnName="testimonials_slider_content" />
+          <ScalarProperty Name="testimonials_slider_icon" ColumnName="testimonials_slider_icon" />
+          <ScalarProperty Name="testimonials_slider_id" ColumnName="testimonials_slider_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Project_Area">
+      <EntityTypeMapping TypeName="FancyMagazineModel.Project_Area">
+        <MappingFragment StoreEntitySet="Project_Area">
+          <ScalarProperty Name="project_area_url" ColumnName="project_area_url" />
+          <ScalarProperty Name="project_area_content" ColumnName="project_area_content" />
+          <ScalarProperty Name="project_area_title" ColumnName="project_area_title" />
+          <ScalarProperty Name="project_area_id" ColumnName="project_area_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

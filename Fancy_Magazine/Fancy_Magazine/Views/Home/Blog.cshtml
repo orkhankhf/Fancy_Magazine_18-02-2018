@@ -1,0 +1,91 @@
+﻿@model Fancy_Magazine.ViewModels.BlogModel
+@{
+    ViewBag.Title = "Blog";
+    Layout = "~/Views/Shared/Site_Layout.cshtml";
+}
+
+<!--================Banner Area =================-->
+<section class="banner_area">
+    <div class="container">
+        <div class="banner_text_inner">
+            <h4>@Model.SingleBlog.blog_title</h4>
+            <ul>
+                <li><a href="@Url.Action("Index")"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+                <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Archive</a></li>
+                <li><a href="@Url.Action()"><i class="fa fa-angle-right" aria-hidden="true"></i>Static Page</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!--================End Banner Area =================-->
+<!--================Static Area =================-->
+<section class="static_area">
+    <div class="container">
+        <div class="static_inner">
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="static_main_content">
+                        <div class="static_social">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fa fa-thumb-tack" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="static_img">
+                            <img class="img-fluid" src="~/Uploads/@Model.SingleBlog.blog_img" alt="@Model.SingleBlog.blog_title">
+                        </div>
+                        <div class="static_text">
+                            <p>@Model.SingleBlog.blog_content</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="right_sidebar_area">
+                        <aside class="right_widget r_news_widget">
+                            <div class="r_w_title">
+                                <h3>Recent News</h3>
+                            </div>
+                            <div class="news_inner">
+                                @foreach (var item in Model.RecentBlogs)
+                                {
+                                    <div class="news_item">
+                                        <a href="@Url.Action("Blog", new { id=item.blog_id})"><h4>@item.blog_title</h4></a>
+                                        <a href="@Url.Action("Blog", new { id=item.blog_id})"><h6>October 7, 2017</h6></a>
+                                    </div>
+                                }
+                            </div>
+                        </aside>
+                        <aside class="right_widget r_cat_widget">
+                            <div class="r_w_title">
+                                <h3>Categories</h3>
+                            </div>
+                            <ul>
+                                @foreach (var item in Model.Category)
+                                {
+                                    <li><a href="#">@item.category_name</a></li>
+                                }
+                            </ul>
+                        </aside>
+                        <aside class="right_widget r_tag_widget">
+                            <div class="r_w_title">
+                                <h3>Popular Tags</h3>
+                            </div>
+                            <ul>
+                                <li><a href="#">Creative</a></li>
+                                <li><a href="#">Unique</a></li>
+                                <li><a href="#">Photography</a></li>
+                                <li><a href="#">Music</a></li>
+                                <li><a href="#">Wordpress Template</a></li>
+                                <li><a href="#">Ideas</a></li>
+                            </ul>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================End Static Area =================-->

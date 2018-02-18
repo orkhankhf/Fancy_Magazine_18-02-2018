@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Fancy_Magazine.Models.Slider>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.slider_title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.slider_img)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.slider_first_url)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.slider_second_url)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.slider_title)
+        </td>
+        <td>
+            <img src="~/Uploads/@item.slider_img" width="120px" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.slider_first_url)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.slider_second_url)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.slider_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.slider_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.slider_id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,108 @@
+﻿@model Fancy_Magazine.ViewModels.ContactModel
+@{
+	ViewBag.Title = "Contact";
+	Layout = "~/Views/Shared/Site_Layout.cshtml";
+}
+
+<!--================Banner Area =================-->
+<section class="banner_area">
+	<div class="container">
+		<div class="banner_text_inner">
+			<h4>Contact Us</h4>
+			<h5>Tell us about your story and your project.</h5>
+		</div>
+	</div>
+</section>
+<!--================End Banner Area =================-->
+<!--================Contact Us Area =================-->
+<section class="contact_us_area">
+	<div class="container">
+		<style>
+			#map {
+				height: 400px;
+				width: 100%;
+			}
+		</style>
+		<div id="map"></div>
+		<script>
+			function initMap() {
+				var uluru = { lat: 40.500, lng: 50.100 };
+				var map = new google.maps.Map(document.getElementById('map'), {
+					zoom: 4,
+					center: uluru
+				});
+				var marker = new google.maps.Marker({
+					position: uluru,
+					map: map
+				});
+			}
+		</script>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjlaHt2jFYJWke_jKYIuw5p3_zyEQ_GzM&callback=initMap"></script>
+
+		<div class="contact_details_inner">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="contact_text">
+						<div class="main_title">
+							<h2>Contact Us</h2>
+							<p>There are many ways to contact us. You may drop us a line, give us a call or send an email, choose what suits you the most</p>
+						</div>
+						<div class="contact_d_list">
+							@foreach (var item in Model.Contact)
+							{
+								<div class="contact_d_list_item">
+									<a href="#">@item.contact_phone</a>
+									<a href="#">@item.contact_email</a>
+								</div>
+								<div class="contact_d_list_item">
+									<p>@item.contact_address</p>
+								</div>
+								<div class="contact_d_list_item">
+									<p>@item.contact_work_time</p>
+								</div>
+							}
+						</div>
+						<div class="static_social">
+							<div class="main_title">
+								<h2>Follow Us:</h2>
+							</div>
+							<ul>
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+								<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="contact_form">
+						<div class="main_title">
+							<h2>Get In Touch With Us!</h2>
+							<p>Fill out the form below to recieve a free and confidential.</p>
+						</div>
+						@using (Html.BeginForm("Contact", "Home", FormMethod.Post, new { @class= "contact_us_form row", id= "contactForm" }))
+						{
+							<div class="form-group col-lg-12">
+								<input type="text" class="form-control" name="message_name" placeholder="Name">
+							</div>
+							<div class="form-group col-lg-12">
+								<input type="email" class="form-control" name="message_email" placeholder="E-mail">
+							</div>
+							<div class="form-group col-lg-12">
+								<input type="text" class="form-control" name="message_website_url" placeholder="Website">
+							</div>
+							<div class="form-group col-lg-12">
+								<textarea class="form-control" name="message_website_url" rows="1" placeholder="Message"></textarea>
+							</div>
+							<div class="form-group col-md-12">
+								<button type="submit" value="submit" class="btn submit_btn2 form-control">Send Messages</button>
+							</div>
+						}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--================End Contact Us Area =================-->

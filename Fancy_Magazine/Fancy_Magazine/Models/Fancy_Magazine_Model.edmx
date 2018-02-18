@@ -1,0 +1,473 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="FancyMagazineModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Blog">
+          <Key>
+            <PropertyRef Name="blog_id" />
+          </Key>
+          <Property Name="blog_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="blog_title" Type="nvarchar" MaxLength="150" />
+          <Property Name="blog_content" Type="nvarchar(max)" />
+          <Property Name="blog_img" Type="nvarchar" MaxLength="50" />
+          <Property Name="blog_category_id" Type="int" />
+        </EntityType>
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="category_id" />
+          </Key>
+          <Property Name="category_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="category_name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="contact_id" />
+          </Key>
+          <Property Name="contact_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="contact_phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="contact_email" Type="nvarchar" MaxLength="50" />
+          <Property Name="contact_address" Type="nvarchar" MaxLength="100" />
+          <Property Name="contact_work_time" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Feature_Boxes">
+          <Key>
+            <PropertyRef Name="feature_boxes_id" />
+          </Key>
+          <Property Name="feature_boxes_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="feature_boxes_title" Type="nvarchar" MaxLength="50" />
+          <Property Name="feature_boxes_icon" Type="nvarchar" MaxLength="50" />
+          <Property Name="feature_boxes_content" Type="nvarchar" MaxLength="250" />
+          <Property Name="feature_boxes_url" Type="nvarchar" MaxLength="350" />
+        </EntityType>
+        <EntityType Name="Industries">
+          <Key>
+            <PropertyRef Name="industries_id" />
+          </Key>
+          <Property Name="industries_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="industries_title" Type="nvarchar" MaxLength="120" />
+          <Property Name="industries_content" Type="nvarchar" MaxLength="400" />
+          <Property Name="industries_img" Type="nvarchar" MaxLength="50" />
+          <Property Name="industries_url" Type="nvarchar" MaxLength="350" />
+        </EntityType>
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="menu_id" />
+          </Key>
+          <Property Name="menu_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="menu_text" Type="nvarchar" MaxLength="50" />
+          <Property Name="menu_url" Type="nvarchar" MaxLength="350" />
+        </EntityType>
+        <EntityType Name="Messages">
+          <Key>
+            <PropertyRef Name="message_id" />
+          </Key>
+          <Property Name="message_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="message_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="message_email" Type="nvarchar" MaxLength="50" />
+          <Property Name="message_website_url" Type="nvarchar" MaxLength="350" />
+          <Property Name="message_content" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Project_Area">
+          <Key>
+            <PropertyRef Name="project_area_id" />
+          </Key>
+          <Property Name="project_area_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="project_area_title" Type="nvarchar" MaxLength="150" />
+          <Property Name="project_area_content" Type="nvarchar" MaxLength="300" />
+          <Property Name="project_area_url" Type="nvarchar" MaxLength="350" />
+        </EntityType>
+        <EntityType Name="Service_Area">
+          <Key>
+            <PropertyRef Name="service_id" />
+          </Key>
+          <Property Name="service_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="service_img" Type="nvarchar" MaxLength="50" />
+          <Property Name="service_title" Type="nvarchar" MaxLength="100" />
+          <Property Name="service_content" Type="nvarchar" MaxLength="300" />
+          <Property Name="service_content_url" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Service_Area_Contents">
+          <Key>
+            <PropertyRef Name="service_contents_id" />
+          </Key>
+          <Property Name="service_contents_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="service_contents_title" Type="nvarchar" MaxLength="100" />
+          <Property Name="service_contents_content" Type="nvarchar(max)" />
+          <Property Name="service_contents_icon" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Slider">
+          <Key>
+            <PropertyRef Name="slider_id" />
+          </Key>
+          <Property Name="slider_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="slider_title" Type="nvarchar" MaxLength="80" />
+          <Property Name="slider_img" Type="nvarchar" MaxLength="50" />
+          <Property Name="slider_first_url" Type="nvarchar" MaxLength="350" />
+          <Property Name="slider_second_url" Type="nvarchar" MaxLength="350" />
+        </EntityType>
+        <EntityType Name="Testimonials_Slider">
+          <Key>
+            <PropertyRef Name="testimonials_slider_id" />
+          </Key>
+          <Property Name="testimonials_slider_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="testimonials_slider_icon" Type="nvarchar" MaxLength="200" />
+          <Property Name="testimonials_slider_content" Type="nvarchar(max)" />
+          <Property Name="testimonials_slider_author" Type="nvarchar" MaxLength="50" />
+          <Property Name="testimonials_slider_position" Type="nvarchar" MaxLength="50" />
+          <Property Name="testimonials_slider_img" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <Association Name="FK_Blog_Categories">
+          <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
+          <End Role="Blog" Type="Self.Blog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="category_id" />
+            </Principal>
+            <Dependent Role="Blog">
+              <PropertyRef Name="blog_category_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FancyMagazineModelStoreContainer">
+          <EntitySet Name="Blog" EntityType="Self.Blog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Feature_Boxes" EntityType="Self.Feature_Boxes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Industries" EntityType="Self.Industries" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Messages" EntityType="Self.Messages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Project_Area" EntityType="Self.Project_Area" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Service_Area" EntityType="Self.Service_Area" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Service_Area_Contents" EntityType="Self.Service_Area_Contents" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Slider" EntityType="Self.Slider" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Testimonials_Slider" EntityType="Self.Testimonials_Slider" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Blog_Categories" Association="Self.FK_Blog_Categories">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Blog" EntitySet="Blog" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FancyMagazineModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="FancyMagazineEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Blogs" EntityType="FancyMagazineModel.Blog" />
+          <EntitySet Name="Categories" EntityType="FancyMagazineModel.Category" />
+          <EntitySet Name="Contacts" EntityType="FancyMagazineModel.Contact" />
+          <EntitySet Name="Feature_Boxes" EntityType="FancyMagazineModel.Feature_Boxes" />
+          <EntitySet Name="Industries" EntityType="FancyMagazineModel.Industry" />
+          <EntitySet Name="Menus" EntityType="FancyMagazineModel.Menu" />
+          <EntitySet Name="Messages" EntityType="FancyMagazineModel.Message" />
+          <EntitySet Name="Service_Area" EntityType="FancyMagazineModel.Service_Area" />
+          <EntitySet Name="Service_Area_Contents" EntityType="FancyMagazineModel.Service_Area_Contents" />
+          <EntitySet Name="Sliders" EntityType="FancyMagazineModel.Slider" />
+          <EntitySet Name="Testimonials_Slider" EntityType="FancyMagazineModel.Testimonials_Slider" />
+          <AssociationSet Name="FK_Blog_Categories" Association="FancyMagazineModel.FK_Blog_Categories">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="Blog" EntitySet="Blogs" />
+          </AssociationSet>
+          <EntitySet Name="Project_Area" EntityType="FancyMagazineModel.Project_Area" />
+        </EntityContainer>
+        <EntityType Name="Blog">
+          <Key>
+            <PropertyRef Name="blog_id" />
+          </Key>
+          <Property Name="blog_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="blog_title" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="blog_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="blog_img" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="blog_category_id" Type="Int32" />
+          <NavigationProperty Name="Category" Relationship="FancyMagazineModel.FK_Blog_Categories" FromRole="Blog" ToRole="Category" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="category_id" />
+          </Key>
+          <Property Name="category_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="category_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Blogs" Relationship="FancyMagazineModel.FK_Blog_Categories" FromRole="Category" ToRole="Blog" />
+        </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="contact_id" />
+          </Key>
+          <Property Name="contact_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="contact_phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="contact_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="contact_address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="contact_work_time" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Feature_Boxes">
+          <Key>
+            <PropertyRef Name="feature_boxes_id" />
+          </Key>
+          <Property Name="feature_boxes_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="feature_boxes_title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="feature_boxes_icon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="feature_boxes_content" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="feature_boxes_url" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Industry">
+          <Key>
+            <PropertyRef Name="industries_id" />
+          </Key>
+          <Property Name="industries_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="industries_title" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="industries_content" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="industries_img" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="industries_url" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="menu_id" />
+          </Key>
+          <Property Name="menu_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="menu_text" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="menu_url" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Message">
+          <Key>
+            <PropertyRef Name="message_id" />
+          </Key>
+          <Property Name="message_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="message_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="message_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="message_website_url" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="message_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Service_Area">
+          <Key>
+            <PropertyRef Name="service_id" />
+          </Key>
+          <Property Name="service_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="service_img" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="service_title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="service_content" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="service_content_url" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Service_Area_Contents">
+          <Key>
+            <PropertyRef Name="service_contents_id" />
+          </Key>
+          <Property Name="service_contents_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="service_contents_title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="service_contents_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="service_contents_icon" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Slider">
+          <Key>
+            <PropertyRef Name="slider_id" />
+          </Key>
+          <Property Name="slider_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="slider_title" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="slider_img" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="slider_first_url" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="slider_second_url" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Testimonials_Slider">
+          <Key>
+            <PropertyRef Name="testimonials_slider_id" />
+          </Key>
+          <Property Name="testimonials_slider_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="testimonials_slider_icon" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="testimonials_slider_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="testimonials_slider_author" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="testimonials_slider_position" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="testimonials_slider_img" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_Blog_Categories">
+          <End Type="FancyMagazineModel.Category" Role="Category" Multiplicity="0..1" />
+          <End Type="FancyMagazineModel.Blog" Role="Blog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="category_id" />
+            </Principal>
+            <Dependent Role="Blog">
+              <PropertyRef Name="blog_category_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Project_Area">
+          <Key>
+            <PropertyRef Name="project_area_id" />
+          </Key>
+          <Property Name="project_area_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="project_area_title" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="project_area_content" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="project_area_url" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FancyMagazineModelStoreContainer" CdmEntityContainer="FancyMagazineEntities">
+          <EntitySetMapping Name="Blogs">
+            <EntityTypeMapping TypeName="FancyMagazineModel.Blog">
+              <MappingFragment StoreEntitySet="Blog">
+                <ScalarProperty Name="blog_category_id" ColumnName="blog_category_id" />
+                <ScalarProperty Name="blog_img" ColumnName="blog_img" />
+                <ScalarProperty Name="blog_content" ColumnName="blog_content" />
+                <ScalarProperty Name="blog_title" ColumnName="blog_title" />
+                <ScalarProperty Name="blog_id" ColumnName="blog_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="FancyMagazineModel.Category">
+              <MappingFragment StoreEntitySet="Categories">
+                <ScalarProperty Name="category_name" ColumnName="category_name" />
+                <ScalarProperty Name="category_id" ColumnName="category_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contacts">
+            <EntityTypeMapping TypeName="FancyMagazineModel.Contact">
+              <MappingFragment StoreEntitySet="Contact">
+                <ScalarProperty Name="contact_work_time" ColumnName="contact_work_time" />
+                <ScalarProperty Name="contact_address" ColumnName="contact_address" />
+                <ScalarProperty Name="contact_email" ColumnName="contact_email" />
+                <ScalarProperty Name="contact_phone" ColumnName="contact_phone" />
+                <ScalarProperty Name="contact_id" ColumnName="contact_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Feature_Boxes">
+            <EntityTypeMapping TypeName="FancyMagazineModel.Feature_Boxes">
+              <MappingFragment StoreEntitySet="Feature_Boxes">
+                <ScalarProperty Name="feature_boxes_url" ColumnName="feature_boxes_url" />
+                <ScalarProperty Name="feature_boxes_content" ColumnName="feature_boxes_content" />
+                <ScalarProperty Name="feature_boxes_icon" ColumnName="feature_boxes_icon" />
+                <ScalarProperty Name="feature_boxes_title" ColumnName="feature_boxes_title" />
+                <ScalarProperty Name="feature_boxes_id" ColumnName="feature_boxes_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Industries">
+            <EntityTypeMapping TypeName="FancyMagazineModel.Industry">
+              <MappingFragment StoreEntitySet="Industries">
+                <ScalarProperty Name="industries_url" ColumnName="industries_url" />
+                <ScalarProperty Name="industries_img" ColumnName="industries_img" />
+                <ScalarProperty Name="industries_content" ColumnName="industries_content" />
+                <ScalarProperty Name="industries_title" ColumnName="industries_title" />
+                <ScalarProperty Name="industries_id" ColumnName="industries_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Menus">
+            <EntityTypeMapping TypeName="FancyMagazineModel.Menu">
+              <MappingFragment StoreEntitySet="Menu">
+                <ScalarProperty Name="menu_url" ColumnName="menu_url" />
+                <ScalarProperty Name="menu_text" ColumnName="menu_text" />
+                <ScalarProperty Name="menu_id" ColumnName="menu_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Messages">
+            <EntityTypeMapping TypeName="FancyMagazineModel.Message">
+              <MappingFragment StoreEntitySet="Messages">
+                <ScalarProperty Name="message_content" ColumnName="message_content" />
+                <ScalarProperty Name="message_website_url" ColumnName="message_website_url" />
+                <ScalarProperty Name="message_email" ColumnName="message_email" />
+                <ScalarProperty Name="message_name" ColumnName="message_name" />
+                <ScalarProperty Name="message_id" ColumnName="message_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Service_Area">
+            <EntityTypeMapping TypeName="FancyMagazineModel.Service_Area">
+              <MappingFragment StoreEntitySet="Service_Area">
+                <ScalarProperty Name="service_content_url" ColumnName="service_content_url" />
+                <ScalarProperty Name="service_content" ColumnName="service_content" />
+                <ScalarProperty Name="service_title" ColumnName="service_title" />
+                <ScalarProperty Name="service_img" ColumnName="service_img" />
+                <ScalarProperty Name="service_id" ColumnName="service_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Service_Area_Contents">
+            <EntityTypeMapping TypeName="FancyMagazineModel.Service_Area_Contents">
+              <MappingFragment StoreEntitySet="Service_Area_Contents">
+                <ScalarProperty Name="service_contents_icon" ColumnName="service_contents_icon" />
+                <ScalarProperty Name="service_contents_content" ColumnName="service_contents_content" />
+                <ScalarProperty Name="service_contents_title" ColumnName="service_contents_title" />
+                <ScalarProperty Name="service_contents_id" ColumnName="service_contents_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sliders">
+            <EntityTypeMapping TypeName="FancyMagazineModel.Slider">
+              <MappingFragment StoreEntitySet="Slider">
+                <ScalarProperty Name="slider_second_url" ColumnName="slider_second_url" />
+                <ScalarProperty Name="slider_first_url" ColumnName="slider_first_url" />
+                <ScalarProperty Name="slider_img" ColumnName="slider_img" />
+                <ScalarProperty Name="slider_title" ColumnName="slider_title" />
+                <ScalarProperty Name="slider_id" ColumnName="slider_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Testimonials_Slider">
+            <EntityTypeMapping TypeName="FancyMagazineModel.Testimonials_Slider">
+              <MappingFragment StoreEntitySet="Testimonials_Slider">
+                <ScalarProperty Name="testimonials_slider_img" ColumnName="testimonials_slider_img" />
+                <ScalarProperty Name="testimonials_slider_position" ColumnName="testimonials_slider_position" />
+                <ScalarProperty Name="testimonials_slider_author" ColumnName="testimonials_slider_author" />
+                <ScalarProperty Name="testimonials_slider_content" ColumnName="testimonials_slider_content" />
+                <ScalarProperty Name="testimonials_slider_icon" ColumnName="testimonials_slider_icon" />
+                <ScalarProperty Name="testimonials_slider_id" ColumnName="testimonials_slider_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Project_Area">
+            <EntityTypeMapping TypeName="FancyMagazineModel.Project_Area">
+              <MappingFragment StoreEntitySet="Project_Area">
+                <ScalarProperty Name="project_area_url" ColumnName="project_area_url" />
+                <ScalarProperty Name="project_area_content" ColumnName="project_area_content" />
+                <ScalarProperty Name="project_area_title" ColumnName="project_area_title" />
+                <ScalarProperty Name="project_area_id" ColumnName="project_area_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram DiagramId="d04b7632c9db44b9b6e21341f3f54d45" Name="Diagram1">
+        <EntityTypeShape EntityType="FancyMagazineModel.Blog" Width="1.5" PointX="3" PointY="0.875" />
+        <EntityTypeShape EntityType="FancyMagazineModel.Category" Width="1.5" PointX="0.75" PointY="1.25" />
+        <EntityTypeShape EntityType="FancyMagazineModel.Contact" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="FancyMagazineModel.Feature_Boxes" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="FancyMagazineModel.Industry" Width="1.5" PointX="4.75" PointY="4.75" />
+        <EntityTypeShape EntityType="FancyMagazineModel.Menu" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="FancyMagazineModel.Message" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="FancyMagazineModel.Service_Area" Width="1.5" PointX="6.75" PointY="6.75" />
+        <EntityTypeShape EntityType="FancyMagazineModel.Service_Area_Contents" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="FancyMagazineModel.Slider" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="FancyMagazineModel.Testimonials_Slider" Width="1.5" PointX="2.75" PointY="7.75" />
+        <AssociationConnector Association="FancyMagazineModel.FK_Blog_Categories" />
+        <EntityTypeShape EntityType="FancyMagazineModel.Project_Area" Width="1.5" PointX="9.375" PointY="3.75" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

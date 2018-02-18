@@ -1,0 +1,51 @@
+﻿@model Fancy_Magazine.Models.Blog
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Blog</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.blog_title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.blog_title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.blog_content)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.blog_content)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.blog_img)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.blog_img)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.category_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.category_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.blog_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,59 @@
+﻿@model Fancy_Magazine.Models.Testimonials_Slider
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Testimonials_Slider</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.testimonials_slider_icon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.testimonials_slider_icon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.testimonials_slider_content)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.testimonials_slider_content)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.testimonials_slider_author)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.testimonials_slider_author)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.testimonials_slider_position)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.testimonials_slider_position)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.testimonials_slider_img)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.testimonials_slider_img)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.testimonials_slider_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

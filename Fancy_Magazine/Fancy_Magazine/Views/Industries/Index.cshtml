@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Fancy_Magazine.Models.Industry>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.industries_title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.industries_content)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.industries_img)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.industries_url)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.industries_title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.industries_content)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.industries_img)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.industries_url)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.industries_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.industries_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.industries_id })
+        </td>
+    </tr>
+}
+
+</table>

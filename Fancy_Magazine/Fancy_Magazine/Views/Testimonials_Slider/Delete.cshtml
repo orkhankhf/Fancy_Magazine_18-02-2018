@@ -1,0 +1,65 @@
+﻿@model Fancy_Magazine.Models.Testimonials_Slider
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Testimonials_Slider</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.testimonials_slider_icon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.testimonials_slider_icon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.testimonials_slider_content)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.testimonials_slider_content)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.testimonials_slider_author)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.testimonials_slider_author)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.testimonials_slider_position)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.testimonials_slider_position)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.testimonials_slider_img)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.testimonials_slider_img)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

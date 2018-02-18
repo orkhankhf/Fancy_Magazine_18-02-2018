@@ -1,0 +1,51 @@
+﻿@model Fancy_Magazine.Models.Feature_Boxes
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Feature_Boxes</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.feature_boxes_title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.feature_boxes_title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.feature_boxes_icon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.feature_boxes_icon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.feature_boxes_content)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.feature_boxes_content)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.feature_boxes_url)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.feature_boxes_url)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.feature_boxes_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
